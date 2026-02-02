@@ -33,7 +33,7 @@ export default function Notice(props: NoticeProps) {
         }
       }
     },
-    [props, controls, navigate]
+    [props, controls, navigate],
   );
 
   const mbPercent = props.mb ?? 0;

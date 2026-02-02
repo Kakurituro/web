@@ -9,8 +9,8 @@ interface BeforeInstallPromptEvent extends Event {
 export default function PwaInstallNotice() {
   const controls = useAnimation();
   // PWAがすでにインストールされているかチェック（初期化時に）
-  const [isInstalled, setIsInstalled] = useState(() =>
-    window.matchMedia("(display-mode: standalone)").matches
+  const [isInstalled, setIsInstalled] = useState(
+    () => window.matchMedia("(display-mode: standalone)").matches,
   );
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(null);
@@ -66,7 +66,7 @@ export default function PwaInstallNotice() {
       // プロンプトをクリア
       setDeferredPrompt(null);
     },
-    [deferredPrompt, controls]
+    [deferredPrompt, controls],
   );
 
   // インストール済みまたは利用不可の場合は表示しない
@@ -86,11 +86,11 @@ export default function PwaInstallNotice() {
         handleClick(e as unknown as React.MouseEvent);
       }
     },
-    [handleClick, isDisabled]
+    [handleClick, isDisabled],
   );
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center mb-4.5">
       <motion.div
         animate={controls}
         whileTap={!isDisabled ? { scale: 0.9 } : undefined}
