@@ -30,7 +30,7 @@ export default function Circle(props: CircleProps) {
         }}
       >
         <img
-          src={`/images/characters/${props.code}/silhouette.svg`}
+          src={`${import.meta.env.BASE_URL}/images/characters/${props.code}/silhouette.svg`}
           alt=""
           style={{ height: "78%" }}
         />

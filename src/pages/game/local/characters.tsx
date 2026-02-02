@@ -107,7 +107,6 @@ export default function Characters() {
         </FormProvider>
       </div>
 
-      {/* ✅ アナウンス表示 */}
       {announce && (
         <Announce
           text={announce}

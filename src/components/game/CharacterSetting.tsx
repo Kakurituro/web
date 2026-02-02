@@ -22,10 +22,7 @@ export default function CharacterSetting({
   })!;
 
   return (
-    <motion.div
-      className="bg-white w-[63svw] mb-[1.8vh] flex items-center p-[0.5svh] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] relative"
-      //これより下が変更点
-    >
+    <motion.div className="bg-white w-[63svw] mb-[1.8vh] flex items-center p-[0.5svh] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] relative">
       <div className="mr-[2.5svw]">
         <Circle code={code} size="14svw" />
       </div>
