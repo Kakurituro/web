@@ -139,7 +139,7 @@ function OptionRadio({
           <input
             type="radio"
             value="false"
-            className="font-MoboBold text-[2.3%] text-black w-[2.3vw]"
+            className="font-MoboBold text-[2.3vh] text-black w-[2.3vw]"
             {...register(name)}
           />
           <p className="text-[4vw] ml-[0.7vw]">いいえ</p>

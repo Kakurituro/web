@@ -132,7 +132,7 @@ export default function Vote() {
     });
   };
 
-    if (!currentPlayer) {
+  if (!currentPlayer) {
     return (
       <div className="min-h-full bg-black text-white flex items-center justify-center">
         <p>有効なプレイヤーが存在しません。</p>
