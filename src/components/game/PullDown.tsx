@@ -13,7 +13,7 @@ type PullDownProps = {
 export default function PullDown({ options, register }: PullDownProps) {
   return (
     <select
-      className="border-gray-300 text-[2svh] rounded-full text-black border-2 font-MoboBold w-[60svw] text-center py-[0.1svh]"
+      className="border-gray-300 text-[2vh] rounded-full text-black border-2 font-MoboBold w-[60%] text-center py-[0.1%]"
       {...register}
       defaultValue=""
     >

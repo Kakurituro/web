@@ -20,7 +20,7 @@ const Player = forwardRef<HTMLInputElement, PlayerProps>((props, ref) => {
       animate={error ? { x: [0, -15, 15, -10, 10, -5, 5, 0] } : { x: 0 }}
       transition={{ duration: 0.67 }}
     >
-      <div className="h-[10.5svw] flex justify-center items-center aspect-square">
+      <div className="h-[10.5vw] flex justify-center items-center aspect-square">
         {focus && !disableRemove ? (
           <img
             src={`${baseUrl}images/game/player_remove.svg`}
@@ -33,14 +33,14 @@ const Player = forwardRef<HTMLInputElement, PlayerProps>((props, ref) => {
             }}
           />
         ) : (
-          <p className="font-Barlow text-white text-[5.4svw] leading-[5.4svw] text-center">
+          <p className="font-Barlow text-white text-[5.4vw] leading-[5.4vw] text-center">
             {numberToString(number)}
           </p>
         )}
       </div>
       <input
         type="text"
-        className={`font-MoboBold ml-[3%] w-[80%] bg-white text-[5.7svw] text-black border border-none rounded leading-[5.7svw] px-2 outline-none ${
+        className={`font-MoboBold ml-[3%] w-[80%] bg-white text-[5.7vw] text-black border border-none rounded leading-[5.7vw] px-2 outline-none ${
           error && "placeholder-[#ea3d3d]"
         }`}
         placeholder="名前を入力"

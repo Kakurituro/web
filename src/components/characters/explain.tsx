@@ -24,17 +24,17 @@ export default function Explain({ data }: ExplainProps) {
         transition={{ type: "spring", stiffness: 300, damping: 10 }}
         whileTap={{ scale: 0.9 }}
       >
-        <div className="bg-white rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] justify-left items-center w-full flex px-[0.5svw] py-[0.5svh]">
-          <div className="mr-[1.5svw]">
-            <Circle code={data.code} size="14svw" />
+        <div className="bg-white rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] justify-left items-center w-full flex px-[0.5vw] py-[0.5%]">
+          <div className="mr-[1.5vw]">
+            <Circle code={data.code} size="14vw" />
           </div>
           <div className="flex-none w-[43%]">
-            <p className="text-[5svw] leading-[5svw] font-MoboBold text-black">
+            <p className="text-[5vw] leading-[5vw] font-MoboBold text-black">
               {data.name}
             </p>
             <Tag team={data.team} />
           </div>
-          <img src={`${import.meta.env.BASE_URL}images/common/arrow.svg`} alt="" className="h-[2svh]" />
+          <img src={`${import.meta.env.BASE_URL}images/common/arrow.svg`} alt="" className="h-[2vh]" />
         </div>
       </motion.div>
     </div>

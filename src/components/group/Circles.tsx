@@ -25,8 +25,8 @@ export default function Circles(props: CirclesProps) {
     <div
       style={{
         position: "relative",
-        width: props.size_svw + "svw",
-        height: props.size_svw + "svw",
+        width: props.size_svw + "vw",
+        height: props.size_svw + "vw",
       }}
     >
       <div
@@ -34,22 +34,22 @@ export default function Circles(props: CirclesProps) {
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: `translate(calc(-50% - ${offsetX}svw), calc(-50% - ${offsetY}svw))`,
+          transform: `translate(calc(-50% - ${offsetX}vw), calc(-50% - ${offsetY}vw))`,
           zIndex: 10,
         }}
       >
-        <Circle code={data1.code} size={props.size_svw - difference + "svw"} />
+        <Circle code={data1.code} size={props.size_svw - difference + "vw"} />
       </div>
       <div
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: `translate(calc(-50% + ${offsetX}svw), calc(-50% + ${offsetY}svw))`,
+          transform: `translate(calc(-50% + ${offsetX}vw), calc(-50% + ${offsetY}vw))`,
           zIndex: 20,
         }}
       >
-        <Circle code={data2.code} size={props.size_svw - difference + "svw"} />
+        <Circle code={data2.code} size={props.size_svw - difference + "vw"} />
       </div>
     </div>
   );

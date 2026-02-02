@@ -46,7 +46,7 @@ export default function Option() {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex-1 px-[10svw] py-[0.6svh] overflow-y-auto space-y-[2vh] h-[67svh]"
+          className="flex-1 px-[10%] py-[0.6%] overflow-y-auto space-y-[2%] h-[67%]"
         >
           <OptionRadio
             label="占い師のお告げ"
@@ -100,7 +100,7 @@ export default function Option() {
           />
         </form>
 
-        <div className="px-[4svw] pb-[3svh]">
+        <div className="px-[4%] pb-[3%]">
           <NavButton
             next={handleSubmit(onSubmit)}
             nextText="開始"
@@ -123,26 +123,26 @@ function OptionRadio({
   register: UseFormRegister<FormValues>;
 }) {
   return (
-    <div className="bg-white rounded-[6px] shadow-md p-[2.9svw] flex flex-col justify-center h-[10svh]">
-      <p className="font-MoboBold text-[4.5svw] text-black">{label}</p>
-      <div className="flex mt-[0.7svh]">
-        <label className="mr-[5svw] flex items-center">
+    <div className="bg-white rounded-[6px] shadow-md p-[2.9%] flex flex-col justify-center h-[10%]">
+      <p className="font-MoboBold text-[4.5vw] text-black">{label}</p>
+      <div className="flex mt-[0.7%]">
+        <label className="mr-[5%] flex items-center">
           <input
             type="radio"
             value="true"
-            className="font-MoboBold text-[2.3svw] text-black w-[2.3svw]"
+            className="font-MoboBold text-[2.3vw] text-black w-[2.3vw]"
             {...register(name)}
           />
-          <p className="text-[4svw] ml-[0.7svw]">はい</p>
+          <p className="text-[4vw] ml-[0.7vw]">はい</p>
         </label>
         <label className="mr-4 flex items-center">
           <input
             type="radio"
             value="false"
-            className="font-MoboBold text-[2.3svh] text-black w-[2.3svw]"
+            className="font-MoboBold text-[2.3%] text-black w-[2.3vw]"
             {...register(name)}
           />
-          <p className="text-[4svw] ml-[0.7svw]">いいえ</p>
+          <p className="text-[4vw] ml-[0.7vw]">いいえ</p>
         </label>
       </div>
     </div>
@@ -159,10 +159,10 @@ function OptionNumber({
   register: UseFormRegister<FormValues>;
 }) {
   return (
-    <div className="bg-white rounded-[6px] shadow-md p-[2.9svw] flex flex-col justify-center h-[10svh]">
-      <p className="font-MoboBold text-[4.5svw] text-black">{label}</p>
+    <div className="bg-white rounded-[6px] shadow-md p-[2.9%] flex flex-col justify-center h-[10%]">
+      <p className="font-MoboBold text-[4.5vw] text-black">{label}</p>
 
-      <div className="flex items-center text-black p-0 mt-[0.7svh]">
+      <div className="flex items-center text-black p-0 mt-[0.7%]">
         <input
           type="number"
           {...register(name, {
@@ -181,7 +181,7 @@ function OptionNumber({
           })}
           className=""
         />
-        <p className="text-[4svw] leading-[0.7svw] text-black">分</p>
+        <p className="text-[4vw] leading-[0.7vw] text-black">分</p>
       </div>
     </div>
   );

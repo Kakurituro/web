@@ -81,10 +81,10 @@ export default function Characters() {
       transition={{ duration: 0.3 }}
     >
       <Title title="役職設定" />
-      <div className="h-[67%] flex flex-col justify-center items-center w-[100svw]">
+      <div className="h-[67%] flex flex-col justify-center items-center w-full">
         <FormProvider {...methods}>
           <motion.div
-            className="w-[66svw] overflow-y-scroll overflow-x-clip"
+            className="w-[66%] overflow-y-scroll overflow-x-clip"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}

@@ -88,27 +88,27 @@ export default function Noon() {
 
   return (
     <motion.div
-      className="relative min-h-screen w-screen overflow-hidden flex flex-col items-center"
+      className="relative min-h-full w-full overflow-hidden flex flex-col items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="pt-[calc(env(safe-area-inset-top)) mt-[10svh] flex">
-        <div className="bg-black/70 text-white rounded font-Barlow text-[5svh] px-[4svw]">
+      <div className="pt-[calc(env(safe-area-inset-top)) mt-[10%] flex">
+        <div className="bg-black/70 text-white rounded font-Barlow text-[5vh] px-[4%]">
           {formatTime(timeLeft)}
         </div>
 
         {!extended && (
           <button
             onClick={handleExtend}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded ml-[5svw] px-[4svw] text-[5svh] font-Barlow"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded ml-[5%] px-[4%] text-[5vh] font-Barlow"
           >
             +{gameSetting.prolongDiscussionMinutes}:00
           </button>
         )}
       </div>
-      <div className="w-[100svw] h-[60svh] flex relative">
+      <div className="w-full h-[60%] flex relative">
         {cards.map((_, i) => {
           const angle = (i / aliveCount) * 2 * Math.PI;
           const x = CARD_RADIUS * Math.cos(angle);

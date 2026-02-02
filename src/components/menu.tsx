@@ -19,7 +19,7 @@ export default function Menu() {
           z-50
         "
       >
-        <div className="flex w-[93%] h-full justify-center items-center mx-auto py-[1svh]">
+        <div className="flex w-[93%] h-full justify-center items-center mx-auto py-[1vh]">
           {/* 左: 開発支援 */}
           <div className="flex justify-end items-center w-[28%] pl-[1%] mr-[3%] h-full">
             <Link to="/support" className="h-full">
@@ -34,7 +34,7 @@ export default function Menu() {
                     className="h-[70%]"
                     alt="設定"
                   />
-                  <p className="font-MoboBold text-[1.45svh] text-black">
+                  <p className="font-MoboBold text-[1.45vh] text-black">
                     開発支援
                   </p>
                 </div>
@@ -56,7 +56,7 @@ export default function Menu() {
                   className="h-[80%]"
                   alt="ホーム"
                 />
-                <p className="font-MoboBold text-black text-[2.3svh] mr-[3svw]">
+                <p className="font-MoboBold text-black text-[2.3vh] mr-[3vw]">
                   ホーム
                 </p>
               </div>
@@ -78,7 +78,7 @@ export default function Menu() {
                     className="h-[70%]"
                     alt="設定"
                   />
-                  <p className="font-MoboBold text-[1.45svh] text-black">
+                  <p className="font-MoboBold text-[1.45vh] text-black">
                     設定
                   </p>
                 </div>

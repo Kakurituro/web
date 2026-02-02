@@ -5,10 +5,10 @@ import { characters } from "../utils/characters";
 
 export default function Characters() {
   return (
-    <div className="h-screen w-screen overflow-y-scroll overflow-x-clip">
-      <div className="h-[91svh]">
+    <div className="h-full w-full overflow-y-scroll overflow-x-clip">
+      <div className="h-[91%]">
         <Title title="役職の能力" />
-        <div className="grid grid-cols-2 gap-[4svw] px-[7.3svw]">
+        <div className="grid grid-cols-2 gap-[4vw] px-[7.3%]">
           {characters.map((character) => (
             <Explain key={character.id} data={character} />
           ))}

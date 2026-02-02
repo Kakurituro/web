@@ -44,13 +44,13 @@ export default function VoteForm({ playerId, onSelected }: VoteFormProps) {
 
   return (
     <>
-      <div className="border-[2px] border-[#b7b7b7] w-[80svw]" />
+      <div className="border-[2px] border-[#b7b7b7] w-[80%]" />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-[80svw] mt-[2svh] flex flex-col items-center"
+        className="w-[80%] mt-[2%] flex flex-col items-center"
       >
-        <div className="w-full h-[23svh] bg-white rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] p-[5svw] flex flex-col items-center justify-start">
-          <p className="font-MoboBold text-black text-[2.2svh] text-center mb-[2svh]">
+        <div className="w-full h-[23%] bg-white rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] p-[5%] flex flex-col items-center justify-start">
+          <p className="font-MoboBold text-black text-[2.2vh] text-center mb-[2%]">
             処刑者を選択してください。
           </p>
 
@@ -77,14 +77,14 @@ export default function VoteForm({ playerId, onSelected }: VoteFormProps) {
 
         <motion.button
           type="submit"
-          className={`bg-[#47a2ff] -mt-[2.1svh] w-[12svh] h-[4.2svh] rounded-full flex justify-center items-center cursor-pointer ${
+          className={`bg-[#47a2ff] -mt-[2.1%] w-[12vh] h-[4.2vh] rounded-full flex justify-center items-center cursor-pointer ${
             isSubmitting || isSubmitted ? "opacity-50 pointer-events-none" : ""
           }`}
           transition={{ type: "spring", stiffness: 300, damping: 10 }}
           whileTap={{ scale: 0.95 }}
           disabled={isSubmitting || isSubmitted}
         >
-          <p className="text-white text-[1.7svh]">
+          <p className="text-white text-[1.7vh]">
             {isSubmitting ? "送信中..." : "決定"}
           </p>
         </motion.button>

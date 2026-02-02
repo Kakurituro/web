@@ -39,14 +39,14 @@ export default function NavButton({
       className="focus:outline-none"
     >
       <motion.div
-        className="w-[30svw] flex justify-center items-center rounded-full py-[1.3svh] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)]"
+        className="w-[30%] flex justify-center items-center rounded-full py-[1.3%] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)]"
         style={{
           backgroundImage: gradient,
         }}
         transition={{ type: "spring", stiffness: 300, damping: 10 }}
         whileTap={{ scale: 0.9 }}
       >
-        <p className="text-white font-MoboBold text-[3.3svh] leading-[3.3svh]">
+        <p className="text-white font-MoboBold text-[3.3vh] leading-[3.3vh]">
           {label}
         </p>
       </motion.div>

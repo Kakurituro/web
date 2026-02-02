@@ -31,10 +31,10 @@ export default function Result() {
       >
         <Title title="結果" />
 
-        <div className="flex-1 px-[10svw] py-[2svh] overflow-y-auto space-y-[2.5vh] h-[86%]">
+        <div className="flex-1 px-[10%] py-[2%] overflow-y-auto space-y-[2.5%] h-[86%]">
           {/* 勝利陣営 */}
-          <div className="bg-white rounded-[6px] shadow-md p-[2svh] space-y-[1.5vh]">
-            <p className="font-MoboBold text-[2.5svh] text-green-700 text-center">
+          <div className="bg-white rounded-[6px] shadow-md p-[2vh] space-y-[1.5vh]">
+            <p className="font-MoboBold text-[2.5vh] text-green-700 text-center">
               勝利：{isWolfWin ? "人狼陣営" : "市民陣営"}
             </p>
             <div className="space-y-2">
@@ -45,8 +45,8 @@ export default function Result() {
                     idx !== winners.length - 1 ? "border-b border-gray-200" : ""
                   }`}
                 >
-                  <Circle code={v.charactersCode!} size={"10svw"} />
-                  <p className="font-MoboBold text-[2.2svh] text-gray-800">
+                  <Circle code={v.charactersCode!} size={"10vw"} />
+                  <p className="font-MoboBold text-[2.2vh] text-gray-800">
                     {v.name ?? "名無し"}
                   </p>
                 </div>
@@ -55,8 +55,8 @@ export default function Result() {
           </div>
 
           {/* 敗北陣営 */}
-          <div className="bg-white rounded-[6px] shadow-md p-[2svh] space-y-[1.5vh]">
-            <p className="font-MoboBold text-[2.5svh] text-red-700 text-center">
+          <div className="bg-white rounded-[6px] shadow-md p-[2vh] space-y-[1.5vh]">
+            <p className="font-MoboBold text-[2.5vh] text-red-700 text-center">
               敗北：{!isWolfWin ? "人狼陣営" : "市民陣営"}
             </p>
             <div className="space-y-2">
@@ -67,8 +67,8 @@ export default function Result() {
                     idx !== losers.length - 1 ? "border-b border-gray-200" : ""
                   }`}
                 >
-                  <Circle code={v.charactersCode!} size={"10svw"} />
-                  <p className="font-MoboBold text-[2.2svh] text-gray-800">
+                  <Circle code={v.charactersCode!} size={"10vw"} />
+                  <p className="font-MoboBold text-[2.2vh] text-gray-800">
                     {v.name ?? "名無し"}
                   </p>
                 </div>
@@ -77,7 +77,7 @@ export default function Result() {
           </div>
         </div>
 
-        <div className="px-[4svw] pb-[3svh]">
+        <div className="px-[4%] pb-[3%]">
           <NavButton next={"/"} />
         </div>
       </motion.div>

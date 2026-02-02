@@ -88,19 +88,19 @@ export default function Home() {
   const nameTyped = useTypewriterEffect(nameText, 50);
   const longTextTyped = useTypewriterEffect(longText, 15);
   return (
-    <div className="h-[100svh] w-[100svw]screen overflow-y-clip overflow-x-clip">
-      <div className="h-[5svh]"></div>
+    <div className="h-full w-full overflow-y-clip overflow-x-clip">
+      <div className="h-[5%]"></div>
       <motion.div
-        className="h-[100svh] w-screen top-0 flex flex-col justify-start"
+        className="h-full w-full top-0 flex flex-col justify-start"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="h-[5svh]"></div>
-        <div className="w-[100svw] h-[27svh] flex justify-center items-stretch">
+        <div className="h-[5%]"></div>
+        <div className="w-full h-[27%] flex justify-center items-stretch">
           <div
-            className="relative w-[30svw] h-[42svw]"
+            className="relative w-[30%] h-[42vw]"
             style={{ perspective: "1000px" }}
           >
             <motion.div
@@ -139,9 +139,9 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
-          <div className="w-[50svw] ml-[3svw] bg-white px-[1%] py-[3%] rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] flex flex-col items-center h-[42svw]">
+          <div className="w-[50%] ml-[3%] bg-white px-[1%] py-[3%] rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] flex flex-col items-center h-[42vw]">
             <motion.p
-              className="font-MoboBold text-black text-[4.8svw]"
+              className="font-MoboBold text-black text-[4.8vw]"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -151,7 +151,7 @@ export default function Home() {
 
             {/* longText 複数行のフェード表示 */}
             <motion.div
-              className="text-[2.8svw] text-black p-1 text-left w-full whitespace-pre-wrap leading-[4.1svw]"
+              className="text-[2.8vw] text-black p-1 text-left w-full whitespace-pre-wrap leading-[4.1vw]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
@@ -160,7 +160,7 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        <div className="w-[100svw] flex flex-col justify-center h-[33svh] mt-[0svh]">
+        <div className="w-full flex flex-col justify-center h-[33%] mt-[0%]">
           <Notice
             text={"ローカル対戦"}
             subtext={"みんなで1台のスマートフォンを共有して対戦"}
@@ -193,19 +193,19 @@ export default function Home() {
         </div>
 
         {/* 説明ボタン */}
-        <div className="w-[38%] flex flex-col gap-[0] ml-[3svw] mt-[5svh] h-[13svh]">
+        <div className="w-[38%] flex flex-col gap-[0] ml-[3%] mt-[5%] h-[13%]">
           <ExplanationButton
             text={"役職の能力"}
             src={`${import.meta.env.BASE_URL}images/home/role_button.svg`}
             to="/characters"
-            height="5svh"
+            height="5%"
             width="100%"
             mb={8}
           />
           <ExplanationButton
             text={"ルールブック"}
             src={`${import.meta.env.BASE_URL}images/home/rule_button.svg`}
-            height="5svh"
+            height="5%"
             width="100%"
             onClick={() => {
               setHopups([

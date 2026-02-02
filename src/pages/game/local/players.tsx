@@ -125,12 +125,12 @@ export default function Players() {
 
         <form
           onSubmit={handleSubmit(onSubmit, onInvalid)}
-          className="h-screen w-screen overflow-x-clip overflow-y-clip"
+          className="h-full w-full overflow-x-clip overflow-y-clip"
         >
-          <div className="h-[100svh]">
+          <div className="h-full">
             <Title title="プレイヤー設定" />
             <div className="flex flex-col justify-center items-center space-y-2 ">
-              <div className="h-[67svh] overflow-y-scroll w-[70%]">
+              <div className="h-[67%] overflow-y-scroll w-[70%]">
                 <AnimatePresence initial={false}>
                   {fields.map((field, i) => (
                     <motion.div
@@ -138,7 +138,7 @@ export default function Players() {
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="w-full flex justify-center mb-[2.7svw]"
+                      className="w-full flex justify-center mb-[2.7%]"
                     >
                       <Player
                         number={i + 1}
@@ -164,7 +164,7 @@ export default function Players() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
-                  className="rounded-[6px] flex items-center justify-start bg-no-repeat h-[10.5svw]"
+                  className="rounded-[6px] flex items-center justify-start bg-no-repeat h-[10.5vw]"
                   style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/game/player_add.svg')` }}
                 >
                   <div

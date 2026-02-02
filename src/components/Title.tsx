@@ -13,7 +13,7 @@ export default function Title(props: TitleProps) {
           className="bg-center w-[80%] bg-size-[100%] bg-no-repeat"
           style={{ backgroundImage: `url('${baseUrl}images/common/title.svg')` }}
         >
-          <p className="font-Kurobara text-[7.3svw] text-white py-[10%] text-center">
+          <p className="font-Kurobara text-[7.3vw] text-white py-[10%] text-center">
             {props.title}
           </p>
         </div>

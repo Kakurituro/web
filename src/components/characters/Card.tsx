@@ -25,8 +25,8 @@ export default function Card({ data, code, w_svw }: CardProps) {
   return (
     <div
       style={{
-        width: w_svw + "svw",
-        height: w_svw * 1.4 + "svw",
+        width: w_svw + "vw",
+        height: w_svw * 1.4 + "vw",
       }}
       className="bg-white shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] rounded-[6px]"
     >
@@ -45,7 +45,7 @@ export default function Card({ data, code, w_svw }: CardProps) {
       <div className="bg-[#1e1e1e] text-white font-MoboBold h-[24%] rounded-b-[6px] flex justify-center items-center">
         <p
           style={{
-            fontSize: w_svw * 0.13 + "svw",
+            fontSize: w_svw * 0.13 + "vw",
           }}
         >
           {characterData.name}

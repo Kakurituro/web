@@ -132,9 +132,9 @@ export default function Vote() {
     });
   };
 
-  if (!currentPlayer) {
+    if (!currentPlayer) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="min-h-full bg-black text-white flex items-center justify-center">
         <p>有効なプレイヤーが存在しません。</p>
       </div>
     );
@@ -142,7 +142,7 @@ export default function Vote() {
 
   return (
     <motion.div
-      className="min-h-screen w-screen flex items-center justify-center"
+      className="min-h-full w-full flex items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -166,7 +166,7 @@ export default function Vote() {
           onConfirm={handleConfirm}
         />
       ) : (
-        <div className="flex flex-col items-center justify-end pb-[7svh] h-[100svh]">
+        <div className="flex flex-col items-center justify-end pb-[7%] h-full">
           <div
             className="mt-auto mb-auto"
             style={{

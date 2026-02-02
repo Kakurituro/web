@@ -20,8 +20,8 @@ export default function VoteResult() {
       >
         <Title title="投票結果" />
 
-        <div className="flex-1 px-[10svw] py-[2svh] overflow-y-auto space-y-[2.5vh] h-[86%]">
-          <div className="bg-white rounded-[6px] shadow-md p-[2svh] space-y-[1.5vh]">
+        <div className="flex-1 px-[10%] py-[2%] overflow-y-auto space-y-[2.5%] h-[86%]">
+          <div className="bg-white rounded-[6px] shadow-md p-[2vh] space-y-[1.5vh]">
             {(() => {
               if (!players || players.length === 0) return null;
 
@@ -45,15 +45,15 @@ export default function VoteResult() {
                     className="flex items-center gap-4 pb-2"
                   >
                     <div className="flex items-center gap-2 w-[35%] min-w-[100px]">
-                      <p className="font-MoboBold text-[2.2svh] text-gray-800 truncate">
+                      <p className="font-MoboBold text-[2.2vh] text-gray-800 truncate">
                         {player.name}
                       </p>
                     </div>
-                    <p className="text-[2svh] text-gray-600 w-[5%] text-center">
+                    <p className="text-[2vh] text-gray-600 w-[5%] text-center">
                       &#x25B6;
                     </p>
                     <div className="flex items-center gap-2 w-[35%] min-w-[100px]">
-                      <p className="font-MoboBold text-[2.2svh] text-gray-800 truncate">
+                      <p className="font-MoboBold text-[2.2vh] text-gray-800 truncate">
                         {lastTargetId === 0
                           ? "スキップ"
                           : target?.name ?? "不明"}
@@ -66,7 +66,7 @@ export default function VoteResult() {
           </div>
         </div>
 
-        <div className="px-[4svw] pb-[3svh]">
+        <div className="px-[4%] pb-[3%]">
           <NavButton
             next={() => {
               navigate("/game/local/night");

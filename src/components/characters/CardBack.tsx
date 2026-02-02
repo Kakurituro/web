@@ -3,10 +3,10 @@ interface CardProps {
 }
 
 export default function CardBack({ w_svw }: CardProps) {
-  const width = `${w_svw}svw`;
-  const height = `${w_svw * 1.4}svw`;
-  const logoSize = `${w_svw * 0.45}svw`;
-  const cornerSize = `${w_svw * 0.3}svw`;
+  const width = `${w_svw}vw`;
+  const height = `${w_svw * 1.4}vw`;
+  const logoSize = `${w_svw * 0.45}vw`;
+  const cornerSize = `${w_svw * 0.3}vw`;
   const baseUrl = import.meta.env.BASE_URL;
 
   return (

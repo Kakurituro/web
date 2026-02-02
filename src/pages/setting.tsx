@@ -5,9 +5,9 @@ import Notice from "../components/support/notice";
 
 export default function Characters() {
   return (
-    <div className="  h-screen w-screen overflow-y-scroll overflow-x-clip">
+    <div className="h-full w-full overflow-y-scroll overflow-x-clip">
       <motion.div
-        className="h-[91svh]"
+        className="h-[91%]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}

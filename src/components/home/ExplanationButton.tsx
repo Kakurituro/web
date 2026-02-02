@@ -40,7 +40,7 @@ export default function ExplanationButton({
       className="flex items-center bg-white pr-[2%] rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)]"
     >
       <img src={src} alt="" className="h-full rounded-l-[7px] flex-shrink-0" />
-      <p className="font-MoboBold text-[3.7svw] text-black ml-[5%] truncate whitespace-nowrap">
+      <p className="font-MoboBold text-[3.7vw] text-black ml-[5%] truncate whitespace-nowrap">
         {text}
       </p>
     </motion.div>

@@ -58,10 +58,10 @@ export default function Notice(props: NoticeProps) {
           <div className="w-[3%] z-0"></div>
         )}
         <div className="ml-[2%] z-0">
-          <p className="font-MoboBold text-black text-[5.4svw] leading-[5.7svw]">
+          <p className="font-MoboBold text-black text-[5.4vw] leading-[5.7vw]">
             {props.text}
           </p>
-          <p className="text-blacksub text-[2.7svw] mt-[1.5%]">
+          <p className="text-blacksub text-[2.7vw] mt-[1.5%]">
             {props.subtext}
           </p>
         </div>

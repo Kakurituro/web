@@ -22,7 +22,7 @@ export default function Hopup({ data }: HopupProps) {
 
   return (
     <motion.div
-      className="bg-[#fffef8] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1000 w-[80svw] rounded-[2.3svw] drop-shadow-lg pb-[4svh]"
+      className="bg-[#fffef8] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-1000 w-[80%] rounded-[2.3vw] drop-shadow-lg pb-[4%]"
       style={{ display: isVisible ? undefined : "none" }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -46,7 +46,7 @@ export default function Hopup({ data }: HopupProps) {
         });
       }}
     >
-      <div className="flex justify-center items-center mt-[4svw]">
+      <div className="flex justify-center items-center mt-[4%]">
         {data[inPage]?.code ? (
           <div className="p-[7%]">
             <Card code={data[inPage].code} w_svw={47} />
@@ -54,7 +54,7 @@ export default function Hopup({ data }: HopupProps) {
         ) : data[inPage]?.src ? (
           <motion.img
             src={data[inPage].src}
-            className="w-[90%] rounded-[2.3svw] drop-shadow-sm"
+            className="w-[90%] rounded-[2.3vw] drop-shadow-sm"
             alt=""
             key={inPage}
             initial={{ opacity: 0, x: 0 }}
@@ -65,16 +65,16 @@ export default function Hopup({ data }: HopupProps) {
         ) : null}
       </div>
 
-      <div className="flex justify-center items-center mt-[2.5svw]">
+      <div className="flex justify-center items-center mt-[2.5%]">
         <div
-          className={`w-[90%] pt-[2.5svw] px-[3svw] h-[12svh] ${
+          className={`w-[90%] pt-[2.5%] px-[3%] h-[12vh] ${
             !data[inPage]?.code && !data[inPage]?.src
               ? ""
               : "border-t-3 border-[#b7b7b7]"
           }`}
         >
           <motion.div
-            className="text-[1.4svh] text-blacksub leading-[2svh] space-y-[1svh]"
+            className="text-[1.4vh] text-blacksub leading-[2vh] space-y-[1vh]"
             key={inPage}
             initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ export default function Hopup({ data }: HopupProps) {
         </div>
       </div>
 
-      <div className="flex justify-center items-center mt-[2svh]">
+      <div className="flex justify-center items-center mt-[2%]">
         <div className="flex justify-between">
           {dataLength === 1
             ? ""
@@ -103,7 +103,7 @@ export default function Hopup({ data }: HopupProps) {
                     scale: index === inPage ? 1.2 : 1,
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="w-[2svw] h-[2svw] border-[2px] border-[#565656] rounded-full mx-[1svw]"
+                  className="w-[2vw] h-[2vw] border-[2px] border-[#565656] rounded-full mx-[1vw]"
                 />
               ))}
         </div>
@@ -114,9 +114,9 @@ export default function Hopup({ data }: HopupProps) {
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsVisible(false)}
       >
-        <div className="absolute mt-[2svh] left-1/2 -translate-x-1/2">
-          <div className="bg-[#47a2ff] w-[12svh] h-[4.2svh] rounded-full flex justify-center items-center">
-            <p className="text-white text-[1.7svh]">閉じる</p>
+        <div className="absolute mt-[2%] left-1/2 -translate-x-1/2">
+          <div className="bg-[#47a2ff] w-[12vh] h-[4.2vh] rounded-full flex justify-center items-center">
+            <p className="text-white text-[1.7vh]">閉じる</p>
           </div>
         </div>
       </motion.div>

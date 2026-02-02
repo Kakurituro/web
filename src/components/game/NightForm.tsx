@@ -101,9 +101,9 @@ export default function NightFormInfo({
 
   if (announce) {
     return (
-      <div className="w-[80svw] mt-[2svh] flex flex-col items-center">
-        <div className="w-full h-[23svh] bg-white rounded-[6px] shadow p-[5svw] flex items-center justify-center">
-          <p className="text-[2.2svh] font-MoboBold text-center text-black">
+      <div className="w-[80%] mt-[2%] flex flex-col items-center">
+        <div className="w-full h-[23%] bg-white rounded-[6px] shadow p-[5%] flex items-center justify-center">
+          <p className="text-[2.2vh] font-MoboBold text-center text-black">
             {announce}
           </p>
         </div>
@@ -112,11 +112,11 @@ export default function NightFormInfo({
             setAnnounce(undefined);
             onSelected();
           }}
-          className="bg-[#47a2ff] -mt-[2.1svh] w-[12svh] h-[4.2svh] rounded-full flex justify-center items-center cursor-pointer"
+          className="bg-[#47a2ff] -mt-[2.1%] w-[12vh] h-[4.2vh] rounded-full flex justify-center items-center cursor-pointer"
           whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 300, damping: 10 }}
         >
-          <p className="text-white text-[1.7svh]">確認</p>
+          <p className="text-white text-[1.7vh]">確認</p>
         </motion.button>
       </div>
     );
@@ -138,7 +138,7 @@ export default function NightFormInfo({
           player.charactersCode === "wolf" ? "噛み対象" : "占う対象";
         return (
           <>
-            <p className="font-MoboBold text-black text-[2.2svh] text-center mb-[2svh]">
+            <p className="font-MoboBold text-black text-[2.2vh] text-center mb-[2%]">
               {label}を選択してください。
             </p>
             <motion.div {...(errors.TargetId1 ? shake : {})}>
@@ -182,7 +182,7 @@ export default function NightFormInfo({
 
         if (targets.length === 0) {
           return (
-            <p className="font-MoboBold text-black text-[2.2svh] text-center mb-[2svh]">
+            <p className="font-MoboBold text-black text-[2.2vh] text-center mb-[2%]">
               守れる対象がいません。
             </p>
           );
@@ -192,7 +192,7 @@ export default function NightFormInfo({
 
         return (
           <>
-            <p className="font-MoboBold text-black text-[2.2svh] text-center mb-[2svh]">
+            <p className="font-MoboBold text-black text-[2.2vh] text-center mb-[2%]">
               {isHero && isFirstDay
                 ? "守る対象を2人選択してください。"
                 : "守る対象を選択してください。"}
@@ -233,12 +233,12 @@ export default function NightFormInfo({
 
   return (
     <>
-      <div className="border-[2px] border-[#b7b7b7] w-[80svw]" />
+      <div className="border-[2px] border-[#b7b7b7] w-[80%]" />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-[80svw] mt-[2svh] flex flex-col items-center"
+        className="w-[80%] mt-[2%] flex flex-col items-center"
       >
-        <div className="w-full h-[23svh] bg-white rounded-[6px] shadow p-[5svw] flex flex-col items-center justify-start">
+        <div className="w-full h-[23%] bg-white rounded-[6px] shadow p-[5%] flex flex-col items-center justify-start">
           {renderFormByRole()}
         </div>
         {["seer", "wolf", "knight", "hero"].includes(
@@ -246,11 +246,11 @@ export default function NightFormInfo({
         ) && (
           <motion.button
             type="submit"
-            className="bg-[#47a2ff] -mt-[2.1svh] w-[12svh] h-[4.2svh] rounded-full flex justify-center items-center cursor-pointer"
+            className="bg-[#47a2ff] -mt-[2.1%] w-[12vh] h-[4.2vh] rounded-full flex justify-center items-center cursor-pointer"
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
             whileTap={{ scale: 0.9 }}
           >
-            <p className="text-white text-[1.7svh]">次へ</p>
+            <p className="text-white text-[1.7vh]">次へ</p>
           </motion.button>
         )}
       </form>
