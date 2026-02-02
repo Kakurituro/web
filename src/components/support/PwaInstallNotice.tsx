@@ -69,6 +69,16 @@ export default function PwaInstallNotice() {
     [deferredPrompt, controls]
   );
 
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleClick(e as unknown as React.MouseEvent);
+      }
+    },
+    [handleClick]
+  );
+
   // インストール済みまたは利用不可の場合は表示しない
   if (isInstalled) {
     return null;
@@ -82,7 +92,13 @@ export default function PwaInstallNotice() {
         animate={controls}
         whileTap={!isDisabled ? { scale: 0.9 } : undefined}
         onClick={handleClick}
-        className="relative bg-white flex w-[75%] px-[1%] py-[3%] rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] items-center cursor-pointer"
+        onKeyDown={handleKeyDown}
+        role="button"
+        tabIndex={0}
+        aria-disabled={isDisabled}
+        className={`relative bg-white flex w-[75%] px-[1%] py-[3%] rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] items-center ${
+          isDisabled ? "cursor-not-allowed" : "cursor-pointer"
+        }`}
         transition={{ type: "spring", stiffness: 300, damping: 10 }}
       >
         {isDisabled && (
@@ -105,6 +121,7 @@ export default function PwaInstallNotice() {
           src={`${import.meta.env.BASE_URL}images/common/arrow.svg`}
           className="h-[25%] ml-[3%] absolute right-[5.5%] z-0"
           alt=""
+          role="presentation"
         />
       </motion.div>
     </div>
