@@ -44,3 +44,14 @@ bun run build
 # プレビュー
 bun run preview
 ```
+
+## 開発者
+
+- ![](iconA) **ハンドルネームA**
+  - GitHub: https://github.com/xxx
+  - X: [https://x.com/0021Yasu](https://x.com/0021Yasu)
+  - 担当：〇〇 — ひとこと
+
+- ![](iconB) **ハンドルネームB**  
+  GitHub: https://github.com/yyy / X: https://x.com/yyy  
+  担当：〇〇 — ひとこと
