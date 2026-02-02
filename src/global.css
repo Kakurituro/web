@@ -1,0 +1,92 @@
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+  -moz-appearance: textfield !important;
+}
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: MoboBold;
+  src: url(/fonts/MOBO/MOBO-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: bahnschrift;
+  src: url(/fonts/bahnschrift/bahnschrift.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Barlow;
+  src: url(/fonts/Barlow/BarlowCondensed-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Kurobara;
+  src: url(/fonts/kurobara/kurobara-gothic-medium.ttf) format("truetype");
+}
+
+.font-MoboBold {
+  font-family: MoboBold;
+  font-weight: 500;
+}
+.font-bahnschrift {
+  font-family: bahnschrift;
+  font-weight: 500;
+}
+
+.font-Barlow {
+  font-family: Barlow;
+  letter-spacing: 0.1cap;
+  font-weight: 600;
+}
+.font-Kurobara {
+  font-family: Kurobara;
+  font-weight: 500;
+}
+.text-black {
+  color: #414141;
+}
+
+.text-blacksub {
+  color: #565656;
+}
+
+.text-white {
+  color: #fcfcfc;
+}
+
+.bg-white {
+  background-color: #fcfcfc;
+}
+.font-mintyou {
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+    "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+    "ＭＳ 明朝", serif;
+}
+
+@layer utilities {
+  .hidden-scrollbar {
+    -ms-overflow-style: none; /* IE, Edge 対応 */
+    scrollbar-width: none; /* Firefox 対応 */
+  }
+  .hidden-scrollbar::-webkit-scrollbar {
+    /* Chrome, Safari 対応 */
+    display: none;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial,
+    "Yu Gothic", YuGothic, "Hiragino Sans", "ヒラギノ角ゴ ProN W3",
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-feature-settings: "pkna";
+  font-weight: 700;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  user-select: none;
+  touch-action: none;
+  background-size: cover;
+  background-position: center;
+}

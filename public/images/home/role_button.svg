@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 102.22 102.22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_名称未設定グラデーション_223);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+    <linearGradient id="_名称未設定グラデーション_223" data-name="名称未設定グラデーション 223" x1="-9.35" y1="16.2" x2="111.58" y2="86.02" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#20dc30"/>
+      <stop offset=".44" stop-color="#13e23d"/>
+      <stop offset=".93" stop-color="#00eb51"/>
+    </linearGradient>
+  </defs>
+  <g id="_レイヤー_1-2" data-name="レイヤー 1">
+    <rect class="cls-1" width="102.22" height="102.22"/>
+    <g>
+      <circle class="cls-2" cx="51.11" cy="40.08" r="20.23"/>
+      <path class="cls-2" d="M70.45,82.37H31.77c.73-10.84,3.92-18.5,10.55-23.75h17.59c6.63,5.25,9.82,12.91,10.55,23.75Z"/>
+    </g>
+  </g>
+</svg>
