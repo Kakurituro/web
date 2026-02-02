@@ -47,11 +47,36 @@ bun run preview
 
 ## 開発者
 
-- ![](iconA) **ハンドルネームA**
-  - GitHub: https://github.com/xxx
-  - X: [https://x.com/0021Yasu](https://x.com/0021Yasu)
-  - 担当：〇〇 — ひとこと
+<table>
+<tr>
+<td align="center" width="160">
+  <img src="/icon/yasu.png" width="120" style="border-radius:50%;" alt="やす icon"><br>
+  <strong>やす</strong><br>
+  <a href="https://github.com/yasu00021">GitHub</a> / 
+  <a href="https://x.com/0021Yasu">X</a>
+</td>
+<td>
+  <ul>
+    <li>総合的なマネジメント</li>
+    <li>ルールの作成 / 改良</li>
+    <li>試遊会の運営</li>
+    <li>デザインコンセプトとの整合</li>
+  </ul>
+</td>
+</tr>
 
-- ![](iconB) **ハンドルネームB**  
-  GitHub: https://github.com/yyy / X: https://x.com/yyy  
-  担当：〇〇 — ひとこと
+<tr>
+<td align="center">
+  <img src="/icon/tomoro.webp" width="120" style="border-radius:50%;" alt="Tomoro icon"><br>
+  <strong>Tomoro Saito</strong><br>
+  <a href="https://github.com/Tomoro0726">GitHub</a> / 
+  <a href="https://x.com/Tomo02721601">X</a>
+</td>
+<td>
+  <ul>
+    <li>デザインの作成</li>
+    <li>プログラムの作成</li>
+  </ul>
+</td>
+</tr>
+</table>
