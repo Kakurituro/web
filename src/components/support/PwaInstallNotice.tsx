@@ -27,16 +27,18 @@ export default function PwaInstallNotice() {
       setDeferredPrompt(e as BeforeInstallPromptEvent);
     };
 
-    window.addEventListener("beforeinstallprompt", handler);
-
     // すでにインストール済みかチェック
-    window.addEventListener("appinstalled", () => {
+    const installedHandler = () => {
       setIsInstalled(true);
       setDeferredPrompt(null);
-    });
+    };
+
+    window.addEventListener("beforeinstallprompt", handler);
+    window.addEventListener("appinstalled", installedHandler);
 
     return () => {
       window.removeEventListener("beforeinstallprompt", handler);
+      window.removeEventListener("appinstalled", installedHandler);
     };
   }, [isInstalled]);
 
@@ -87,6 +89,7 @@ export default function PwaInstallNotice() {
           <div className="absolute inset-0 bg-gray-300 opacity-50 rounded-[6px] pointer-events-none z-10" />
         )}
 
+        {/* レイアウト調整用の空白 */}
         <div className="w-[3%] z-0"></div>
         <div className="ml-[2%] z-0">
           <p className="font-MoboBold text-black text-[5.4svw] leading-[5.7svw]">
@@ -94,7 +97,7 @@ export default function PwaInstallNotice() {
           </p>
           <p className="text-blacksub text-[2.7svw] mt-[1.5%]">
             {isDisabled
-              ? "アプリは既にインストールされています"
+              ? "このブラウザではPWAインストールが利用できません"
               : "アプリとしてインストールして快適にプレイ"}
           </p>
         </div>

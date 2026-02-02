@@ -29,16 +29,18 @@ const PwaInstallButton = ({ onInstallSuccess }: PwaInstallButtonProps) => {
       setDeferredPrompt(e as BeforeInstallPromptEvent);
     };
 
-    window.addEventListener("beforeinstallprompt", handler);
-
     // すでにインストール済みかチェック
-    window.addEventListener("appinstalled", () => {
+    const installedHandler = () => {
       setIsInstalled(true);
       setDeferredPrompt(null);
-    });
+    };
+
+    window.addEventListener("beforeinstallprompt", handler);
+    window.addEventListener("appinstalled", installedHandler);
 
     return () => {
       window.removeEventListener("beforeinstallprompt", handler);
+      window.removeEventListener("appinstalled", installedHandler);
     };
   }, [isInstalled]);
 
