@@ -6,7 +6,6 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
-// 画面遷移しても消えないようにコンポーネントの外で保持
 let globalDeferredPrompt: BeforeInstallPromptEvent | null = null;
 
 export default function PwaInstallNotice() {
@@ -18,18 +17,15 @@ export default function PwaInstallNotice() {
       window.matchMedia("(display-mode: standalone)").matches,
   );
 
-  // 初期値として、すでに保存されているグローバルプロンプトを参照する
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(globalDeferredPrompt);
 
   useEffect(() => {
-    if (isInstalled) return;
-
     const handler = (e: Event) => {
       e.preventDefault();
       const promptEvent = e as BeforeInstallPromptEvent;
-      globalDeferredPrompt = promptEvent; // グローバルに保存
-      setDeferredPrompt(promptEvent); // Stateに反映
+      globalDeferredPrompt = promptEvent;
+      setDeferredPrompt(promptEvent);
     };
 
     const installedHandler = () => {
@@ -38,9 +34,9 @@ export default function PwaInstallNotice() {
       globalDeferredPrompt = null;
     };
 
-    // すでにイベントが発火済みで保存されている場合を考慮
-    if (globalDeferredPrompt) {
-      setDeferredPrompt(globalDeferredPrompt);
+    // 起動時の再チェック
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+      setIsInstalled(true);
     }
 
     window.addEventListener("beforeinstallprompt", handler);
@@ -50,14 +46,16 @@ export default function PwaInstallNotice() {
       window.removeEventListener("beforeinstallprompt", handler);
       window.removeEventListener("appinstalled", installedHandler);
     };
-  }, [isInstalled]);
+  }, []);
 
   const handleClick = useCallback(
     async (e: React.MouseEvent) => {
       e.preventDefault();
 
+      // インストール済みの場合はクリックしても何もさせない（またはアプリ紹介など）
+      if (isInstalled) return;
+
       if (!deferredPrompt) {
-        // インストール不可時のシェイクアニメーション
         await controls.start({
           x: [0, -10, 10, -6, 6, -3, 3, 0],
           transition: { duration: 0.5 },
@@ -74,39 +72,27 @@ export default function PwaInstallNotice() {
       }
       setDeferredPrompt(null);
     },
-    [deferredPrompt, controls],
+    [deferredPrompt, controls, isInstalled],
   );
 
-  if (isInstalled) return null;
-
-  const isDisabled = !deferredPrompt;
-
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent) => {
-      if (isDisabled) return;
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        handleClick(e as unknown as React.MouseEvent);
-      }
-    },
-    [handleClick, isDisabled],
-  );
+  const isDisabled = !deferredPrompt && !isInstalled;
 
   return (
     <div className="w-full flex justify-center mb-4.5">
       <motion.div
         animate={controls}
-        whileTap={!isDisabled ? { scale: 0.9 } : undefined}
+        whileTap={!isDisabled && !isInstalled ? { scale: 0.9 } : undefined}
         onClick={handleClick}
-        onKeyDown={handleKeyDown}
-        role="button"
-        tabIndex={isDisabled ? -1 : 0}
-        aria-disabled={isDisabled}
         className={`relative bg-white flex w-[75%] px-[1%] py-[3%] rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] items-center ${
-          isDisabled ? "cursor-not-allowed" : "cursor-pointer"
+          isInstalled
+            ? "cursor-default border-2 border-green-400"
+            : isDisabled
+              ? "cursor-not-allowed"
+              : "cursor-pointer"
         }`}
         transition={{ type: "spring", stiffness: 300, damping: 10 }}
       >
+        {/* インストール不可時のオーバーレイ */}
         {isDisabled && (
           <div
             className="absolute inset-0 bg-gray-300 opacity-50 rounded-[6px] pointer-events-none z-10"
@@ -116,21 +102,32 @@ export default function PwaInstallNotice() {
 
         <div className="w-[3%] relative z-20"></div>
         <div className="ml-[2%] relative z-20">
-          <p className="font-MoboBold text-black text-[5.4svw] leading-[5.7svw]">
-            アプリをインストール
+          <p
+            className={`font-MoboBold text-[5.4svw] leading-[5.7svw] ${isInstalled ? "text-green-600" : "text-black"}`}
+          >
+            {isInstalled ? "インストール済み" : "アプリをインストール"}
           </p>
           <p className="text-blacksub text-[2.7svw] mt-[1.5%]">
-            {isDisabled
-              ? "このブラウザではPWAインストールが利用できません"
-              : "アプリとしてインストールして快適にプレイ"}
+            {isInstalled
+              ? "アプリ版として正常に動作しています"
+              : isDisabled
+                ? "このブラウザではインストールが利用できません"
+                : "アプリとしてインストールして快適にプレイ"}
           </p>
         </div>
-        <img
-          src={`${import.meta.env.BASE_URL}images/common/arrow.svg`}
-          className="h-[25%] ml-[3%] absolute right-[5.5%] z-20"
-          alt=""
-          role="presentation"
-        />
+
+        {/* 右側のアイコン切り替え */}
+        <div className="absolute right-[5.5%] z-20 flex items-center h-full">
+          {isInstalled ? (
+            <span className="text-green-500 text-[5svw]">✓</span>
+          ) : (
+            <img
+              src={`${import.meta.env.BASE_URL}images/common/arrow.svg`}
+              className="h-[25px]" // 元のサイズ感に合わせて調整してください
+              alt=""
+            />
+          )}
+        </div>
       </motion.div>
     </div>
   );
