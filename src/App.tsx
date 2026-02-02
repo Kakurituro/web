@@ -21,13 +21,13 @@ import GameLocalOption from "./pages/game/local/option";
 
 function App() {
   return (
-    <div className="relative w-[100svw] h-[100svh] overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden touch-none">
       <img
         src={`${import.meta.env.BASE_URL}images/common/back.jpg`}
-        className="object-cover w-[100svw] h-[100svh] absolute top-0 left-0 z-0"
+        className="object-cover w-full h-full absolute top-0 left-0 z-0"
         alt=""
       />
-      <div className="App overflow-x-hidden overflow-y-hidden w-[100svw] h-[100svh] hidden-scrollbar relative z-10">
+      <div className="App overflow-x-hidden overflow-y-hidden w-full h-full hidden-scrollbar relative z-10">
         <LocalProvider>
           <HopupProvider>
             <HopupWrapper />
@@ -57,12 +57,12 @@ function HopupWrapper() {
       <div
         className={
           isVisible
-            ? "blur-sm backdrop-blur-sm w-[100lvw] h-[100lvh]"
-            : "blur-none backdrop-blur-none w-[100lvw] h-[100lvh]"
+            ? "blur-sm backdrop-blur-sm w-full h-full"
+            : "blur-none backdrop-blur-none w-full h-full"
         }
       >
         <div
-          className={`absolute w-[100lvw] h-[100lvh] z-999 opacity-10 bg-[#1e1e1e] top-0 left-0 ${
+          className={`absolute w-full h-full z-999 opacity-10 bg-[#1e1e1e] top-0 left-0 ${
             isVisible ? "inline" : "hidden"
           }`}
           onClick={() => setIsVisible(false)}
