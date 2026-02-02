@@ -1,70 +1,73 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./global.css";
 import { BrowserRouter } from "react-router-dom";
 
-const SmartphonePreview: React.FC = () => {
+const Root: React.FC = () => {
+  // 画面の向きを管理するステート
+  const [isPortrait, setIsPortrait] = useState(
+    window.innerHeight >= window.innerWidth,
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      // リアルタイムに画面の向きを判定
+      setIsPortrait(window.innerHeight >= window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // 縦画面（スマホ）の場合のみアプリ本体を起動
+  if (isPortrait) {
+    return (
+      <React.StrictMode>
+        <BrowserRouter basename="/web">
+          <App />
+        </BrowserRouter>
+      </React.StrictMode>
+    );
+  }
+
+  // 縦画面以外（PC・横向き）の場合は、何も表示しないか警告のみを表示
   return (
-    <div style={styles.fullscreen}>
-      <div style={styles.smartphonePreview}>
-        <iframe
-          src="/"
-          style={styles.iframe}
-          title="スマホビュー"
-          sandbox="allow-scripts allow-same-origin allow-forms"
-        />
-      </div>
+    <div style={styles.errorContainer}>
+      <p style={styles.errorText}>
+        このアプリはスマートフォンの縦画面専用です。
+      </p>
+      <p style={styles.errorSubText}>
+        端末を縦向きにするか、スマートフォンでアクセスしてください。
+      </p>
     </div>
   );
 };
 
 const styles: { [key: string]: React.CSSProperties } = {
-  fullscreen: {
+  errorContainer: {
     width: "100vw",
     height: "100vh",
-    margin: 0,
-    padding: 0,
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    background: "#fff",
+    background: "#1a1a1a", // 真っ暗な背景で動作停止を強調
+    color: "#ffffff",
+    textAlign: "center",
+    padding: "20px",
   },
-  smartphonePreview: {
-    width: "calc(80svh / 2)",
-    height: "85svh",
-    maxWidth: "100vw",
-    maxHeight: "100vh",
-    border: "1px solid #ccc",
-    overflow: "hidden",
-    boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-    display: "flex",
+  errorText: {
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    marginBottom: "10px",
   },
-  iframe: {
-    width: "100%",
-    height: "100%",
-    border: "none",
-    display: "block",
-    overflowX: "hidden",
-    overflowY: "hidden",
+  errorSubText: {
+    fontSize: "0.9rem",
+    color: "#ccc",
   },
-};
-
-const Root: React.FC = () => {
-  // 初回のみ画面の向きを判定
-  const isPortrait = window.innerHeight >= window.innerWidth;
-
-  return isPortrait ? (
-    <React.StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </React.StrictMode>
-  ) : (
-    <SmartphonePreview />
-  );
 };
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <Root />
+  <Root />,
 );
