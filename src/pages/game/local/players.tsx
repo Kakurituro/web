@@ -164,7 +164,8 @@ export default function Players() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
-                  className="rounded-[6px] flex items-center justify-start bg-[url('/images/game/player_add.svg')] bg-no-repeat h-[10.5svw]"
+                  className="rounded-[6px] flex items-center justify-start bg-no-repeat h-[10.5svw]"
+                  style={{ backgroundImage: `url('${import.meta.env.BASE_URL}images/game/player_add.svg')` }}
                 >
                   <div
                     className="w-[100%] h-[100%]"
