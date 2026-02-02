@@ -30,7 +30,7 @@ export default function Menu() {
               >
                 <div className="flex flex-col justify-center items-center h-full">
                   <img
-                    src="/images/menu/support.svg"
+                    src={`${import.meta.env.BASE_URL}images/menu/support.svg`}
                     className="h-[70%]"
                     alt="設定"
                   />
@@ -52,7 +52,7 @@ export default function Menu() {
             >
               <div className="flex justify-center items-center h-full">
                 <img
-                  src="/images/menu/home.svg"
+                  src={`${import.meta.env.BASE_URL}images/menu/home.svg`}
                   className="h-[80%]"
                   alt="ホーム"
                 />
@@ -74,7 +74,7 @@ export default function Menu() {
               >
                 <div className="flex flex-col justify-center items-center h-full">
                   <img
-                    src="/images/menu/setting.svg"
+                    src={`${import.meta.env.BASE_URL}images/menu/setting.svg`}
                     className="h-[70%]"
                     alt="設定"
                   />

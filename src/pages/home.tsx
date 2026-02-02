@@ -196,7 +196,7 @@ export default function Home() {
         <div className="w-[38%] flex flex-col gap-[0] ml-[3svw] mt-[5svh] h-[13svh]">
           <ExplanationButton
             text={"役職の能力"}
-            src="/images/home/role_button.svg"
+            src={`${import.meta.env.BASE_URL}images/home/role_button.svg`}
             to="/characters"
             height="5svh"
             width="100%"
@@ -204,25 +204,25 @@ export default function Home() {
           />
           <ExplanationButton
             text={"ルールブック"}
-            src="/images/home/rule_button.svg"
+            src={`${import.meta.env.BASE_URL}images/home/rule_button.svg`}
             height="5svh"
             width="100%"
             onClick={() => {
               setHopups([
                 {
-                  src: "/images/hopup/rule/1.png",
+                  src: `${import.meta.env.BASE_URL}images/hopup/rule/1.png`,
                   text: "人狼ゲームではプレイヤーは市民/人狼陣営のいずれかに割り振られます。\n市民陣営は全ての人狼を処刑すれば勝利です。",
                 },
                 {
-                  src: "/images/hopup/rule/2.png",
+                  src: `${import.meta.env.BASE_URL}images/hopup/rule/2.png`,
                   text: "人狼陣営は市民陣営及び狂人等の他陣営で市民陣営の人数としてカウントするプレイヤーが1人以下であり、人狼が生きていれば勝利です。",
                 },
                 {
-                  src: "/images/hopup/rule/3.png",
+                  src: `${import.meta.env.BASE_URL}images/hopup/rule/3.png`,
                   text: "デフォルト設定では人狼はお互いを認識できません。また、全ての人狼が人狼を攻撃したとき誰も死にません。",
                 },
                 {
-                  src: "/images/hopup/rule/4.png",
+                  src: `${import.meta.env.BASE_URL}images/hopup/rule/4.png`,
                   text: "確率狼独自の仕様として役職人数に幅を持たせる設定ができます。そのためにいくつかの変更点を設けました。\n 初めは初期設定で試合を重ねて、慣れてきたら自分たち好みの設定を作ってみてください。",
                 },
               ]);

@@ -11,17 +11,19 @@ type PlayerProps = {
 const Player = forwardRef<HTMLInputElement, PlayerProps>((props, ref) => {
   const { number, error, onRemove, disableRemove, ...inputProps } = props;
   const [focus, setFocus] = useState(false);
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <motion.div
-      className="w-[99%] bg-white rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] flex items-center justify-start bg-[url('/images/game/player.svg')] bg-no-repeat"
+      className="w-[99%] bg-white rounded-[6px] shadow-[2.4px_2.9px_3px_rgba(128,128,128,0.2)] flex items-center justify-start bg-no-repeat"
+      style={{ backgroundImage: `url('${baseUrl}images/game/player.svg')` }}
       animate={error ? { x: [0, -15, 15, -10, 10, -5, 5, 0] } : { x: 0 }}
       transition={{ duration: 0.67 }}
     >
       <div className="h-[10.5svw] flex justify-center items-center aspect-square">
         {focus && !disableRemove ? (
           <img
-            src="/images/game/player_remove.svg"
+            src={`${baseUrl}images/game/player_remove.svg`}
             className="w-[60%] cursor-pointer"
             alt="削除"
             onMouseDown={(e) => {

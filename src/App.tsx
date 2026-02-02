@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="relative w-[100svw] h-[100svh] overflow-hidden">
       <img
-        src="images/common/back.jpg"
+        src={`${import.meta.env.BASE_URL}images/common/back.jpg`}
         className="object-cover w-[100svw] h-[100svh] absolute top-0 left-0 z-0"
         alt=""
       />
@@ -45,7 +45,7 @@ function HopupWrapper() {
   useEffect(() => {
     setHopups([
       {
-        src: "/images/hopup/rule/test.png",
+        src: `${import.meta.env.BASE_URL}images/hopup/rule/test.png`,
         text: "試験に合格して、ライブ出場を目指しましょう。ライブに出場するためには、中間試験と最終試験に合格する必要があります。",
       },
     ]);

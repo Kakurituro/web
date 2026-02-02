@@ -66,7 +66,7 @@ export default function Notice(props: NoticeProps) {
           </p>
         </div>
         <img
-          src="/images/common/arrow.svg"
+          src={`${import.meta.env.BASE_URL}images/common/arrow.svg`}
           className="h-[25%] ml-[3%] absolute right-[5.5%] z-0"
           alt=""
         />

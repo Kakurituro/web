@@ -37,7 +37,7 @@ export default function Card({ data, code, w_svw }: CardProps) {
         }}
       >
         <img
-          src={`/images/characters/${characterData.code}/silhouette.svg`}
+          src={`${import.meta.env.BASE_URL}images/characters/${characterData.code}/silhouette.svg`}
           className="h-[70%] -m-0.5"
           alt=""
         />

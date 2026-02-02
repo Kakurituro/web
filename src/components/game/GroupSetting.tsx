@@ -44,7 +44,7 @@ export default function GroupSetting({ data, namePrefix }: GroupSettingProps) {
         </div>
       </div>
       <motion.img
-        src="/images/common/arrow.svg"
+        src={`${import.meta.env.BASE_URL}images/common/arrow.svg`}
         alt=""
         className="h-[2svh] absolute right-[3svw]"
         transition={{ type: "spring", stiffness: 300, damping: 10 }}

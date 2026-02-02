@@ -34,7 +34,7 @@ export default function Explain({ data }: ExplainProps) {
             </p>
             <Tag team={data.team} />
           </div>
-          <img src="/images/common/arrow.svg" alt="" className="h-[2svh]" />
+          <img src={`${import.meta.env.BASE_URL}images/common/arrow.svg`} alt="" className="h-[2svh]" />
         </div>
       </motion.div>
     </div>

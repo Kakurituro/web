@@ -7,6 +7,7 @@ export default function CardBack({ w_svw }: CardProps) {
   const height = `${w_svw * 1.4}svw`;
   const logoSize = `${w_svw * 0.45}svw`;
   const cornerSize = `${w_svw * 0.3}svw`;
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <div
@@ -19,7 +20,7 @@ export default function CardBack({ w_svw }: CardProps) {
         style={{
           width: cornerSize,
           height: cornerSize,
-          backgroundImage: "url('/images/game/card_corner.svg')",
+          backgroundImage: `url('${baseUrl}images/game/card_corner.svg')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
         }}
@@ -32,7 +33,7 @@ export default function CardBack({ w_svw }: CardProps) {
         style={{
           width: cornerSize,
           height: cornerSize,
-          backgroundImage: "url('/images/game/card_corner.svg')",
+          backgroundImage: `url('${baseUrl}images/game/card_corner.svg')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
         }}
@@ -41,7 +42,7 @@ export default function CardBack({ w_svw }: CardProps) {
 
       {/* ロゴ */}
       <img
-        src="/images/logo.svg"
+        src={`${baseUrl}images/logo.svg`}
         alt="ゲームロゴ"
         style={{ width: logoSize, height: logoSize }}
         className="pointer-events-none select-none"
