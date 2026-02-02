@@ -105,12 +105,12 @@ export default function PwaInstallNotice() {
         transition={{ type: "spring", stiffness: 300, damping: 10 }}
       >
         {isDisabled && (
-          <div className="absolute inset-0 bg-gray-300 opacity-50 rounded-[6px] pointer-events-none" />
+          <div className="absolute inset-0 bg-gray-300 opacity-50 rounded-[6px] pointer-events-none z-10" />
         )}
 
         {/* レイアウト調整用の空白 */}
-        <div className="w-[3%]"></div>
-        <div className="ml-[2%]">
+        <div className="w-[3%] relative z-20"></div>
+        <div className="ml-[2%] relative z-20">
           <p className="font-MoboBold text-black text-[5.4svw] leading-[5.7svw]">
             PWAとしてインストール
           </p>
@@ -122,7 +122,7 @@ export default function PwaInstallNotice() {
         </div>
         <img
           src={`${import.meta.env.BASE_URL}images/common/arrow.svg`}
-          className="h-[25%] ml-[3%] absolute right-[5.5%]"
+          className="h-[25%] ml-[3%] absolute right-[5.5%] z-20"
           alt=""
           role="presentation"
         />
