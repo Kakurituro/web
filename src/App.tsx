@@ -18,6 +18,7 @@ import GameLocalResult from "./pages/game/local/result";
 import { AnimatePresence } from "motion/react";
 import VoteResult from "./pages/game/local/voteResult";
 import GameLocalOption from "./pages/game/local/option";
+import PwaInstallPrompt from "./components/PwaInstallPrompt";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function HopupWrapper() {
 
   return (
     <>
+      <PwaInstallPrompt />
       <Hopup data={hopups} />
       <div
         className={
