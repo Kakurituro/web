@@ -1,75 +1,46 @@
-# React + TypeScript + Vite
+# 確率狼
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+役職人数がランダムな新感覚人狼ゲーム
 
-Currently, two official plugins are available:
+## ゲーム概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+確率狼は、従来の人狼ゲームに「役職人数の不確定性」という新しい要素を加えた革新的なゲームです。プレイヤーは市民陣営または人狼陣営のいずれかに割り振られ、自陣営の勝利を目指します。
 
-## React Compiler
+### 主な特徴
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **役職人数に幅を持たせる設定**: ゲームごとに役職の人数がランダムに変動します
+- **独自のルール**:
+  - デフォルト設定では人狼はお互いを認識できません
+  - 全ての人狼が人狼を攻撃したとき誰も死にません
+- **ローカル対戦**: みんなで1台のスマートフォンを共有して遊べます
+- **豊富な役職**: 村人、占い師、騎士、勇者、霊媒師、人狼、狂人など
 
-Note: This will impact Vite dev & build performances.
+### 勝利条件
 
-## Expanding the ESLint configuration
+- **市民陣営**: 全ての人狼を処刑すれば勝利
+- **人狼陣営**: 市民陣営が1人以下になり、人狼が生きていれば勝利
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 技術スタック
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Motion (Framer Motion)
+- React Router
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 開発
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+# 依存関係のインストール
+bun install
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# 開発サーバーの起動
+bun run dev
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# ビルド
+bun run build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# プレビュー
+bun run preview
 ```
