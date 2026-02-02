@@ -21,7 +21,7 @@ export default defineConfig({
       manifest: {
         name: "確率狼",
         short_name: "確率狼",
-        description: "確率で役職が決まる人狼ゲーム",
+        description: "役職人数がランダムな新感覚人狼ゲーム",
         theme_color: "#1a1a1a", // ツールバーの色
         background_color: "#1a1a1a", // スプラッシュ画面の背景色
         display: "standalone", // ブラウザのUI（URLバー等）を非表示にする
