@@ -41,13 +41,7 @@ const PwaInstallPrompt = () => {
     deferredPrompt.prompt();
 
     // ユーザーの選択を待つ
-    const { outcome } = await deferredPrompt.userChoice;
-
-    if (outcome === "accepted") {
-      console.log("PWAインストール: 受け入れ");
-    } else {
-      console.log("PWAインストール: 拒否");
-    }
+    await deferredPrompt.userChoice;
 
     // 訪問済みフラグを設定
     localStorage.setItem("pwa-visited", "true");
