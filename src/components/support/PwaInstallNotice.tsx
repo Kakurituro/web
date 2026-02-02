@@ -115,7 +115,7 @@ export default function PwaInstallNotice() {
         <div className="w-[3%] relative z-20"></div>
         <div className="ml-[2%] relative z-20">
           <p className="font-MoboBold text-black text-[5.4svw] leading-[5.7svw]">
-            PWAとしてインストール
+            アプリをインストール
           </p>
           <p className="text-blacksub text-[2.7svw] mt-[1.5%]">
             {isDisabled
