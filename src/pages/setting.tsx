@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import Menu from "../components/menu";
 import Title from "../components/Title";
 import Notice from "../components/support/notice";
+import PwaInstallNotice from "../components/support/PwaInstallNotice";
 
 export default function Characters() {
   return (
@@ -15,6 +16,7 @@ export default function Characters() {
       >
         <Title title="アプリ設定" />
         <div className="flex flex-col justify-center items-center">
+          <PwaInstallNotice />
           <Notice
             text={"プライバシーポリシー"}
             subtext={"アプリのプライバシーポリシーを見る"}
