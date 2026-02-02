@@ -67,7 +67,7 @@ bun run preview
 
 <tr>
 <td align="center">
-  <img src="/icon/tomoro.webp" width="120" style="border-radius:50%;" alt="Tomoro icon"><br>
+  <img src="/icon/tomoro.png" width="120" style="border-radius:50%;" alt="Tomoro icon"><br>
   <strong>Tomoro Saito</strong><br>
   <a href="https://github.com/Tomoro0726">GitHub</a> / 
   <a href="https://x.com/Tomo02721601">X</a>
