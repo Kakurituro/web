@@ -105,7 +105,10 @@ export default function PwaInstallNotice() {
         transition={{ type: "spring", stiffness: 300, damping: 10 }}
       >
         {isDisabled && (
-          <div className="absolute inset-0 bg-gray-300 opacity-50 rounded-[6px] pointer-events-none z-10" />
+          <div
+            className="absolute inset-0 bg-gray-300 opacity-50 rounded-[6px] pointer-events-none z-10"
+            aria-hidden="true"
+          />
         )}
 
         {/* レイアウト調整用の空白 */}
